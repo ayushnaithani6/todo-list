@@ -1,0 +1,26 @@
+<%- include ("./partials/header.ejs") %>
+	
+	<div id="container">
+		<h1>Add new Task </h1>
+		
+		<form action="/tasks" method="POST">
+				<input type="text" name="task[text]" placeholder="Add New Todo">
+				<input type="submit" value="+">
+		</form>
+
+		<ul>
+			<% tasks.forEach(function(task, i) { %>
+				<li> <%= i+1 %>. <%=task.text%> </li>
+			<% }); %>
+		</ul>
+		<span>
+			  <a class="pull-right" href="/tasks">All Tasks</a>
+		</span>
+		
+	</div>
+	
+		
+<%- include ("./partials/footer.ejs") %>
+			
+			
+

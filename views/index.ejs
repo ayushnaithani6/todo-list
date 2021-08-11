@@ -1,0 +1,18 @@
+<%- include ("./partials/header.ejs") %>
+
+	<div id="container">
+		<h1>TO-DO LIST </h1>
+		<ul>
+			<% tasks.forEach(function(task, i) { %>
+				<li> <%= i+1 %>. <%=task.text%> </li>
+			<% }); %>
+		</ul>
+		
+		<span>
+			  <a class="pull-right" href="/tasks/edit">Edit List</a>
+			  <a class="pull-right" href="/tasks/new">Add Task</a>
+		</span>
+		
+	</div>
+
+<%- include ("./partials/footer.ejs") %>

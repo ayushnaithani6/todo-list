@@ -1,0 +1,21 @@
+<%- include ("./partials/header.ejs") %>
+
+	<div id="container">
+		<h1>Tasks List </h1>
+			<ul>
+				<% tasks.forEach(function(task, i) { %>
+					<li> <%= i+1 %>. <%=task.text%>
+					<form class="pull-right" style='display:inline; margin-right: 20px;' action="/tasks/<%=task._id%>/delete?_method=DELETE" method="POST">
+						<button><i class="fa fa-trash"></i></button>	
+					</form>
+					</li>
+				<% }); %>
+			</ul>
+			  
+		<span>
+			  <a class="pull-right" href="/tasks">Go Back</a>
+			  <a class="pull-right" href="/tasks/new">Add Tasks</a>
+		</span>
+	</div>
+
+<%- include ("./partials/footer.ejs") %>
